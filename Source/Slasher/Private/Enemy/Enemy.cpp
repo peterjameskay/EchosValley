@@ -4,6 +4,7 @@
 #include "Slasher/DebugMacros.h"
 #include "Animation/AnimMontage.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
 AEnemy::AEnemy()
 {
@@ -77,6 +78,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	}
 
 	PlayHitReactMontage(Section);
+
+	if (HitSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, HitSound, ImpactPoint);
+	}
 
 	if (GEngine)
 	{
