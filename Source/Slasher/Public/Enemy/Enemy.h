@@ -30,6 +30,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = Sounds)
 	USoundBase* HitSound;
 
+	UPROPERTY(EditAnywhere, Category = Particles)
+	UParticleSystem* HitParticles;
+
 public:	
 	
 

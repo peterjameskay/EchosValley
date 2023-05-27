@@ -83,11 +83,8 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, HitSound, ImpactPoint);
 	}
-
-	if (GEngine)
+	if (HitParticles)
 	{
-		GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Green, FString::Printf(TEXT("Theta: %f"), Theta));
+		UGameplayStatics::SpawnEmitterAtLocation(this, HitParticles, ImpactPoint);
 	}
-	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + Forward * 60.f, 5.f, FLinearColor::Red, 5.f);
-	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FLinearColor::Green, 5.f);
 }
