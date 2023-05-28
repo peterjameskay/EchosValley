@@ -7,7 +7,7 @@
 #include "Item.generated.h"
 
 class USphereComponent;
-
+class UNiagaraComponent;
 enum class EItemState : uint8
 {
 	EIS_Hovering,
@@ -53,6 +53,9 @@ protected:
 
 	UFUNCTION()
 	virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	UPROPERTY(EditAnywhere)
+	UNiagaraComponent* EmbersEffect;
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))

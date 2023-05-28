@@ -23,7 +23,7 @@ ABreakableActor::ABreakableActor()
 void ABreakableActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 void ABreakableActor::Tick(float DeltaTime)
@@ -39,7 +39,7 @@ void ABreakableActor::GetHit_Implementation(const FVector &ImpactPoint)
 	if (TreasureClasses.Num() > 0 && World)
 	{
 		FVector Location = GetActorLocation();
-		Location.Z += 75.f;
+		Location.Z += LocationZ;
 
 		const int32 Selection = FMath::RandRange(0, TreasureClasses.Num() - 1);
 

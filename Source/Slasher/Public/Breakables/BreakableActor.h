@@ -31,5 +31,8 @@ private:
 	UPROPERTY(EditAnywhere)
 	TArray<TSubclassOf<ATreasure>> TreasureClasses;
 
+	UPROPERTY(EditAnywhere)
+	int32 LocationZ = 75.f;
+
 	bool bBroken = false;
 };
