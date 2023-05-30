@@ -40,7 +40,8 @@ AEchoCharacter::AEchoCharacter()
 void AEchoCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	Tags.Add(FName("EchoCharacter"));
 }
 void AEchoCharacter::MoveForward(float Value)
 {
